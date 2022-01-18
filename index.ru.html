@@ -20,13 +20,13 @@
     <header>
         <div>
             <h1>Mi Logo Maker</h1>
-            <span>Logo generator for Redmi K30, Poco X2, Poco X3 PRO</span>
+            <span>Генератор лого для Redmi K30, Poco X2, Poco X3 PRO</span>
         </div>
         <multibutton id="download">
             <div class="base">
                 <a onclick="createZip()">
                     <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M20.54 5.23l-1.39-1.68C18.88 3.21 18.47 3 18 3H6c-.47 0-.88.21-1.16.55L3.46 5.23C3.17 5.57 3 6.02 3 6.5V19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6.5c0-.48-.17-.93-.46-1.27zM6.24 5h11.52l.81.97H5.44l.8-.97zM5 19V8h14v11H5zm8.45-9h-2.9v3H8l4 4 4-4h-2.55z"></path></svg>
-                    Create flashable zip
+                    Создать zip для прошивки
                 </a>
                 <button onclick="parentElement.parentElement.classList.toggle('open')">
                     <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
@@ -38,67 +38,67 @@
                 <a onclick="createImg()">
                     <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
                         <path d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm2 16H5V5h11.17L19 7.83V19zm-7-7c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3zM6 6h9v4H6z"/>
-                    </svg>Create logo.img</a>
+                    </svg>Создать logo.img</a>
                 <a onclick="systemDestroyed()">
                     <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M12 5.99L19.53 19H4.47L12 5.99M2.74 18c-.77 1.33.19 3 1.73 3h15.06c1.54 0 2.5-1.67 1.73-3L13.73 4.99c-.77-1.33-2.69-1.33-3.46 0L2.74 18zM11 11v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zm0 5h2v2h-2z"></path></svg>
-                    Replace all with 'System...destroyed'</a>
+                    Заменить все на 'System...destroyed'</a>
                 <a onclick="location.reload()">
                     <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M20 6h-8l-2-2H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 12H4V8h16v10z"></path></svg>
-                    Close file</a>
+                    Закрыть файл</a>
                 <a onclick="info()">
                     <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-4h2v2h-2zm1.61-9.96c-2.06-.3-3.88.97-4.43 2.79-.18.58.26 1.17.87 1.17h.2c.41 0 .74-.29.88-.67.32-.89 1.27-1.5 2.3-1.28.95.2 1.65 1.13 1.57 2.1-.1 1.34-1.62 1.63-2.45 2.88 0 .01-.01.01-.01.02-.01.02-.02.03-.03.05-.09.15-.18.32-.25.5-.01.03-.03.05-.04.08-.01.02-.01.04-.02.07-.12.34-.2.75-.2 1.25h2c0-.42.11-.77.28-1.07.02-.03.03-.06.05-.09.08-.14.18-.27.28-.39.01-.01.02-.03.03-.04.1-.12.21-.23.33-.34.96-.91 2.26-1.65 1.99-3.56-.24-1.74-1.61-3.21-3.35-3.47z"></path></svg>
-                    Info</a>
+                    Инфо</a>
             </div>
         </multibutton>
     </header>
     <div id="output">
         <div>
-            Drag and drop logo.img here
-            <div><hr>or<hr></div>
+            Перетащите сюда logo.img
+            <div><hr>или<hr></div>
             <div style="gap: 8px">
                 <label id="openimg">
                     <input type="file" accept=".bin,.img" onchange="readLogoFile(files)">
-                    Open file
+                    Открыть файл
                 </label>
-                <button onclick="loadPrebuilt()">Load template</button>
+                <button onclick="loadPrebuilt()">Загрузить шаблон</button>
             </div>
         </div>
     </div>
     <footer>
-        <span>Thanks Gokul NC & Pzqqt for the idea</span>
-        <a href="https://github.com/fordownloads"><img src="images/fd.svg" alt="website by fordownloads"></a>
+        <span>Спасибо Gokul NC и Pzqqt за идею</span>
+        <a href="https://github.com/fordownloads"><img src="images/fd.svg" alt="сайт сделан fordownloads"></a>
     </footer>
     <dialogWrap id="alert" class="close">
         <dialogBody>
-            <h2 id="alertTitle">Packing...</h2>
+            <h2 id="alertTitle"></h2>
             <span id="alertText"></span>
             <div class="big-button">
-                <button class="close">Close</button>
+                <button class="close">Закрыть</button>
             </div>
         </dialogBody>
     </dialogWrap>
     <dialogWrap id="loading" class="indeterminate close">
         <dialogBody>
-            <h2 id="loadingTitle">Packing...</h2>
+            <h2 id="loadingTitle"></h2>
             <div><div id="loadingProgress"></div></div>
             <span id="loadingText"></span>
         </dialogBody>
     </dialogWrap>
     <dialogWrap full id="resize" class="close">
         <dialogBody>
-            <h2>Resize image</h2>
+            <h2>Импорт изображения</h2>
             <canvas width="1080" height="2400"></canvas>
             <div class="resize-params">
                 <input type="checkbox" id="resizeStretch">
-                <label for="resizeStretch" style="margin-right: auto;width: 108px;">Stretch</label>
-                Color:
+                <label for="resizeStretch" style="margin-right: auto;width: 108px;">Растянуть</label>
+                Цвет:
                 <input type="color" id="resizeColor">
-                Size:
+                Масштаб:
                 <input type="number" id="resizeSize" style="width: 48px" step="0.05" value="1" min="0.05">
             </div>
             <div class="big-button">
-                <button class="close">Cancel</button>
-                <button class="close" id="resizeContinue" primary>Continue</button>
+                <button class="close">Отмена</button>
+                <button class="close" id="resizeContinue" primary>Продолжить</button>
             </div>
         </dialogBody>
     </dialogWrap>
@@ -141,7 +141,7 @@
             $.statusBar.setAttribute('content', '#ffffff')
         }
 
-        imageLoader.onerror = () => alertDialog('Error', "Image can't be opened")
+        imageLoader.onerror = () => alertDialog('Ошибка', "Невозможно открыть изображение")
 
         $.resizeStretch.onchange = () => {
             $.canvas.fillStyle = $.resizeColor.value
@@ -181,7 +181,7 @@
 
         const loadLogoImg = buf => {
             if (buf.length < meta.binSize)
-                return alertDialog('Failed to load logo.img', `logo.img is smaller than ${meta.binSize}`)
+                return alertDialog('Ошибка загрузки logo.img', `Размер logo.img меньше, чем ${meta.binSize}`)
 
             files.logo = buf
             document.body.className = "loaded"
@@ -213,7 +213,7 @@
         const createImg = () => {
             copyImagesToLogo()
             saveAs('img', new Blob([files.logo], {type: 'application/octet-stream'}))
-            alertDialog('logo.img has been created', `Copy downloaded file to /dev/block/bootdevice/by-name/logo`)
+            alertDialog('logo.img был создан', `Скопируйте его в /dev/block/bootdevice/by-name/logo`)
         }
 
         const createZip = () => {
@@ -224,7 +224,7 @@
                     createZip()
                 })
             else {
-                $.loadingTitle.innerText = `Creating zip...`
+                $.loadingTitle.innerText = `Создание zip...`
                 setTimeout(() => {
                     copyImagesToLogo()
                     saveAs('zip', (Zip.from({
@@ -233,7 +233,7 @@
                         ["logo.img"]: files.logo
                     })))
                     $.loading.classList.remove('open')
-                    alertDialog('ZIP has been created', `Flash downloaded file using custom recovery`)
+                    alertDialog('ZIP был создан', `Прошейте его с помощью кастомного рекавери`)
                 }, 100)
             }
         }
@@ -249,7 +249,7 @@
         const readLogoFile = file => {
             let reader = new FileReader()
             reader.readAsArrayBuffer(file[0])
-            reader.onerror = () => alertDialog('Failed to read logo.img', `Choose another logo.img or try again`)
+            reader.onerror = () => alertDialog('Ошибка чтения logo.img', `Выберите другой logo.img или попробуйте снова`)
             reader.onload = () => loadLogoImg(new Uint8Array(reader.result))
         }
         
@@ -258,7 +258,7 @@
             reader.readAsArrayBuffer(picker.files[0])
             picker.value = ''
 
-            reader.onerror = () => alertDialog('Failed to read image', `Choose another image or try again`)
+            reader.onerror = () => alertDialog('Failed to read image', `Выберите другую картинку или попробуйте снова`)
             reader.onload = () => {
                 imageLoader.src = URL.createObjectURL(new Blob([new Uint8Array(reader.result)], {type: 'image/bmp'}))
                 
@@ -286,28 +286,28 @@
         const fetchProgress = (url, callback) => {
             $.loading.classList.remove('indeterminate')
             $.loadingProgress.style.width = 0
-            $.loadingText.innerText = `Preparing...`
-            $.loadingTitle.innerText = `Downloading...`
+            $.loadingText.innerText = `Подготовка...`
+            $.loadingTitle.innerText = `Скачивание...`
 
             const xhr = new XMLHttpRequest()
             xhr.responseType = "arraybuffer";
             xhr.open("GET", url, true)
             xhr.onprogress = p => {
                 $.loadingProgress.style.width = `${p.loaded / p.total * 100}%`
-                $.loadingText.innerText = `${Math.round(p.loaded / 1024)} / ${Math.round(p.total / 1024)} KiB`
+                $.loadingText.innerText = `${Math.round(p.loaded / 1024)} / ${Math.round(p.total / 1024)} КБ`
             }
             xhr.onload = () => {
                 $.loading.classList.add('indeterminate')
                 if (xhr.status !== 200) {
                     $.loading.classList.remove('open')
-                    alertDialog('Failed to download file', `Server returned invalid status code: ${xhr.statusText}`)
+                    alertDialog('Ошибка загрузки файла', `Сервер вернул неверный код: ${xhr.statusText}`)
                 } else
                     callback(new Uint8Array(xhr.response))
             }
             xhr.onerror = () => {
                 $.loading.classList.add('indeterminate')
                 $.loading.classList.remove('open')
-                alertDialog('Failed to download file', `Can't download '${url}'. Check your internet connection.`)
+                alertDialog('Ошибка загрузки файла', `Невозможно скачать '${url}'. Проверьте интернет-соединение.`)
             }
             xhr.send()
         }
@@ -319,31 +319,31 @@
         }
 
         const info = () => 
-            alertDialog('Info', `<div class='dialog-text-wrap'>
-            <p>This tool is created by <a href="https://github.com/fordownloads">fordownloads</a> for editing logo.img file (partition).</p>
-            <p>The author <i>is not responsible</i> for a bricked devices. 
-            The author is also <i>not obliged to help</i> or answer questions. Use this site for your own risk.</p>
-            <p>Using template of logo.img is not recommended because it may be uncompatible with your device.</p>
-            <p>To get logo.img from your device:</p>
+            alertDialog('Информация', `<div class='dialog-text-wrap'>
+            <p>Этот сайт создан <a href="https://github.com/fordownloads">fordownloads</a> для редактирования logo.img.</p>
+            <p>Автор <i>не отвечает</i> за окирпичивание вашего устройства. 
+            Также, автор <i>не обязан помогать</i> или отвечать на вопросы. Используйте сайт на свой страх и риск.</p>
+            <p>Использование шаблона logo.img не рекомендуется, так как он может быть несовместим с вашим устройством.</p>
+            <p>Чтобы получить logo.img с устройства:</p>
                 <ul>
-                    <li>Open file manager with root support (or use file manager from recovery)
-                    <li>Copy <code>/dev/block/bootdevice/by-name/logo</code> file to the <code>Internal Storage</code>
+                    <li>Откройте файловый менеджер с поддержкой рута (или воспользуйтесь файл. менеджером в рекавери)
+                    <li>Скопируйте файл <code>/dev/block/bootdevice/by-name/logo</code> во <code>Внутреннее хранилище</code>
                 </ul></p>
-            <p>Two ways to flash logo.img manually:</p>
+            <p>Способы прошивки logo.img вручную, не используя zip:</p>
                 <ul>
-                    <li>Rename logo.img to logo and copy it to <code>/dev/block/bootdevice/by-name/</code> using root file manager (or file manager from recovery)
-                    <li>Open terminal and write:<br> <code>su<br>
-                        dd if=/location_of/logo.img of=/dev/block/bootdevice/by-name/logo</code>
+                    <li>Переименуйте logo.img в logo и скопируйте его в <code>/dev/block/bootdevice/by-name/</code> (нужен рут или кастомное рекавери)
+                    <li>Откройте терминал и введите:<br> <code>su<br>
+                        dd if=/место_где_лежит/logo.img of=/dev/block/bootdevice/by-name/logo</code>
                 </ul></p>
-            <p>Files that are downloaded by website:
+            <p>Файлы, скачиваемые сайтом при работе:
                 <ul>
-                    <li>update-binary (2MiB) - used for creating zip archives
-                    <li>logo.template (2MiB) - compressed version of logo.img from POCO X3 Pro
+                    <li>update-binary (2МБ) - нужен для создания архива
+                    <li>logo.template (2МБ) - сжатая версия logo.img из POCO X3 Pro
                 </ul></p>
-            <p>You can modify and distribute modified version of this site, but I hightly reccomend to do pull request to
-                <a href="https://github.com/fordownloads/milogomaker">original git repository</a> instead of making a fork. Project is licensed under GPLv3.</p>
-            <p>Original idea belongs to <a href="https://forum.xda-developers.com/t/guide-how-to-change-boot-logo-splash-screen-of-redmi-note-5-pro-whyred.3787820/">Gokul NC & Pzqqt</a>. Zip implementation is refactored version of <a href="https://github.com/pwasystem/zip">pwasystem's zip</a>.</p>
-            <p>Links: <a href="https://github.com/fordownloads/milogomaker">GitHub Repo</a> <a href="https://t.me/fordownloads">Telegram</a></p>
+            <p>Вы можете изменять и распространять измененный сайт, но лучше сделать pull request
+                <a href="https://github.com/fordownloads/milogomaker">в оригинальный репозиторий</a>, чем делать форк. Лицензия проекта - GPLv3.</p>
+            <p>Оригиальная идея - <a href="https://forum.xda-developers.com/t/guide-how-to-change-boot-logo-splash-screen-of-redmi-note-5-pro-whyred.3787820/">Gokul NC и Pzqqt</a>. Код упаковки в zip - это переделанный <a href="https://github.com/pwasystem/zip">zip от pwasystem</a>.</p>
+            <p>Ссылки: <a href="https://github.com/fordownloads/milogomaker">GitHub Репозиторий</a> <a href="https://t.me/fordownloads">Telegram</a> <a href="https://4pda.to/forum/index.php?showuser=5859886">4PDA</a></p>
             </div>`)
 
         const systemDestroyed = () => {
