@@ -353,6 +353,7 @@ multibutton {
     overflow: hidden;
     height: 100%;
     border-radius: 12px;
+    box-shadow: rgb(0 0 0 / 15%) 0px 8px 25px, rgb(0 0 0 / 2%) 0px -12px 10px, rgb(0 0 0 / 2%) 0px 4px 6px
 }
 
 multibutton > div {
@@ -469,7 +470,7 @@ multibutton .base a:hover, multibutton button:hover, button[primary]:hover, labe
     text-align: left;
     margin-bottom: -22px;
     overflow: auto;
-    max-height: calc(100vh - 168px);
+    max-height: calc(100vh - 216px);
     line-height: 1.4;
     margin-right: -24px;
     padding-right: 24px;
@@ -566,7 +567,6 @@ p {margin: 0 0 8px 0}
         transform: translateY(500%);
         z-index: 1;
         height: auto;
-        box-shadow: rgb(0 0 0 / 15%) 0px 8px 25px, rgb(0 0 0 / 2%) 0px -12px 10px, rgb(0 0 0 / 2%) 0px 4px 6px, rgb(0 0 0 / 7%) 0px 2px 3px, 0 286px 0px 256px #efefef;
     }
     card a, card label {
         background-color: #e4e4e4;
