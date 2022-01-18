@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+	<meta name="theme-color" content="#efefef">
+    <link rel="icon" href="favicon.ico" />
+    <link rel="apple-touch-icon" href="logo192.png" />
+    <link rel="manifest" href="manifest.json" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Logo Maker</title>
+    <script async src="filetools.js"></script>
+    <!--link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet"-->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div>
+            <h1 onclick="$.resize.classList.toggle('open'); $.statusBar.setAttribute('content', '#ffffff')">Mi Logo Maker</h1>
+            <span>Logo generator for Redmi K30, Poco X2, Poco X3 PRO</span>
+        </div>
+        <multibutton id="download">
+            <div class="base">
+                <a onclick="createImg()">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+                        <path d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm2 16H5V5h11.17L19 7.83V19zm-7-7c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3zM6 6h9v4H6z"/>
+                    </svg>Create new logo.img
+                </a>
+                <button onclick="parentElement.parentElement.classList.toggle('open')">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+                        <path d="M11.29 8.71L6.7 13.3c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0L12 10.83l3.88 3.88c.39.39 1.02.39 1.41 0 .39-.39.39-1.02 0-1.41L12.7 8.71c-.38-.39-1.02-.39-1.41 0z"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="more">
+                <a onclick="createZip()">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M20.54 5.23l-1.39-1.68C18.88 3.21 18.47 3 18 3H6c-.47 0-.88.21-1.16.55L3.46 5.23C3.17 5.57 3 6.02 3 6.5V19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6.5c0-.48-.17-.93-.46-1.27zM6.24 5h11.52l.81.97H5.44l.8-.97zM5 19V8h14v11H5zm8.45-9h-2.9v3H8l4 4 4-4h-2.55z"></path></svg>
+                    Create flashable zip</a>
+                <a onclick="systemDestroyed()">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M12 5.99L19.53 19H4.47L12 5.99M2.74 18c-.77 1.33.19 3 1.73 3h15.06c1.54 0 2.5-1.67 1.73-3L13.73 4.99c-.77-1.33-2.69-1.33-3.46 0L2.74 18zM11 11v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zm0 5h2v2h-2z"></path></svg>
+                    Replace all with 'System...destroyed'</a>
+                <a onclick="location.reload()">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M20 6h-8l-2-2H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 12H4V8h16v10z"></path></svg>
+                    Close file</a>
+                <a onclick="info()">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-4h2v2h-2zm1.61-9.96c-2.06-.3-3.88.97-4.43 2.79-.18.58.26 1.17.87 1.17h.2c.41 0 .74-.29.88-.67.32-.89 1.27-1.5 2.3-1.28.95.2 1.65 1.13 1.57 2.1-.1 1.34-1.62 1.63-2.45 2.88 0 .01-.01.01-.01.02-.01.02-.02.03-.03.05-.09.15-.18.32-.25.5-.01.03-.03.05-.04.08-.01.02-.01.04-.02.07-.12.34-.2.75-.2 1.25h2c0-.42.11-.77.28-1.07.02-.03.03-.06.05-.09.08-.14.18-.27.28-.39.01-.01.02-.03.03-.04.1-.12.21-.23.33-.34.96-.91 2.26-1.65 1.99-3.56-.24-1.74-1.61-3.21-3.35-3.47z"></path></svg>
+                    Info</a>
+            </div>
+        </multibutton>
+    </header>
+    <div id="output">
+        <div>
+            Drag and drop logo.img here
+            <div><hr>or<hr></div>
+            <div style="gap: 8px">
+                <label id="openimg">
+                    <input type="file" accept=".bin,.img" onchange="readLogoFile(files)">
+                    Open file
+                </label>
+                <button onclick="loadPrebuilt()">Load template</button>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <span>Thanks Gokul NC & Pzqqt for the idea</span>
+        <a href="https://github.com/fordownloads"><img src="images/fd.svg" alt="website by fordownloads"></a>
+    </footer>
+    <dialogWrap id="alert" class="close">
+        <dialogBody>
+            <h2 id="alertTitle">Packing...</h2>
+            <span id="alertText"></span>
+            <div class="big-button">
+                <button class="close">Close</button>
+            </div>
+        </dialogBody>
+    </dialogWrap>
+    <dialogWrap id="loading" class="indeterminate close">
+        <dialogBody>
+            <h2 id="loadingTitle">Packing...</h2>
+            <div><div id="loadingProgress"></div></div>
+            <span id="loadingText"></span>
+        </dialogBody>
+    </dialogWrap>
+    <dialogWrap full id="resize" class="close">
+        <dialogBody>
+            <h2>Resize image</h2>
+            <canvas width="1080" height="2400"></canvas>
+            <div class="resize-params">
+                <input type="checkbox" id="resizeStretch">
+                <label for="resizeStretch" style="margin-right: auto;width: 108px;">Stretch</label>
+                Color:
+                <input type="color" id="resizeColor">
+                Size:
+                <input type="number" id="resizeSize" style="width: 48px" step="0.05" value="1" min="0.05">
+            </div>
+            <div class="big-button">
+                <button class="close">Cancel</button>
+                <button class="close" id="resizeContinue" primary>Continue</button>
+            </div>
+        </dialogBody>
+    </dialogWrap>
+    <script >
+        let $ = {
+            downloader: document.createElement('a'),
+            statusBar: document.querySelector('meta[name="theme-color"]'),
+            canvas: document.getElementsByTagName('canvas')[0].getContext('2d', { alpha: false })
+        };
+
+        ['output', 'resizeContinue', 'resize', 'resizeStretch', 'resizeColor', 'resizeSize',
+            'loading', 'loadingProgress', 'loadingText', 'loadingTitle',
+            'alert', 'alertTitle', 'alertText'].forEach(e => $[e] = document.getElementById(e))
+
+        const meta = {
+            names: ["Locked", "Fastboot", "Unlocked", "System...destroyed"],
+            header: 20480,
+            picSizeFooter: 7778304,
+            picSize: 7776054,
+            binSize: 31133696
+        }
+
+        const files = {
+            logo: null,
+            updateBinary: null,
+            updaterScript: new TextEncoder().encode('ui_print("* Flashing logo...");\npackage_extract_file("logo.img", "/dev/block/bootdevice/by-name/logo");\nui_print("* Done");'),
+            images: {}
+        }
+
+        //crutch for mirroring canvas because Bmp.from() creates mirrored images 
+        $.canvas.translate(1080, 0)
+        $.canvas.scale(-1, 1)
+
+        const imageLoader = new Image()
+
+        imageLoader.onload = () => {
+            $.resizeStretch.checked = true
+            $.resizeStretch.onchange()
+            $.resize.classList.add('open')
+            $.statusBar.setAttribute('content', '#ffffff')
+        }
+
+        imageLoader.onerror = () => alertDialog('Error', "Image can't be opened")
+
+        $.resizeStretch.onchange = () => {
+            $.canvas.fillStyle = $.resizeColor.value
+            $.canvas.fillRect(0, 0, 1080, 2400)
+            
+            if ($.resizeStretch.checked)
+                $.canvas.drawImage(imageLoader, 0, 0, imageLoader.width, imageLoader.height, 0, 0, 1080, 2400)
+            else {
+                let w = $.resizeSize.value * imageLoader.width
+                let h = $.resizeSize.value * imageLoader.height
+                $.canvas.drawImage(imageLoader, 540 - w / 2, 1200 - h / 2, w, h)
+            }
+        }
+
+        $.resizeColor.onchange = $.resizeStretch.onchange
+        $.resizeSize.onchange = $.resizeStretch.onchange
+
+        $.resize.onclick = e => {
+            if (e.target.classList.contains('close')) {
+                $.resize.classList.remove('open')
+                $.statusBar.setAttribute('content', '#efefef')
+            }
+        }
+
+        $.alert.onclick = e => {
+            if (e.target.classList.contains('close'))
+                $.alert.classList.remove('open')
+        }
+
+        document.ondrop = e => {
+            e.preventDefault()
+            if (e.dataTransfer.items[0].kind === 'file')
+                readLogoFile(e.dataTransfer.files)
+        }
+
+        document.ondragover = e => e.preventDefault()
+
+        const loadLogoImg = buf => {
+            if (buf.length < meta.binSize)
+                return alertDialog('Failed to load logo.img', `logo.img is smaller than ${meta.binSize}`)
+
+            files.logo = buf
+            document.body.className = "loaded"
+
+            $.output.append(...meta.names.map((name, i) => {
+                let img, card, offset = meta.header + (meta.picSizeFooter * i)
+                files.images[name] = files.logo.subarray(offset, offset + meta.picSize)
+
+                return card = add('card', {}, [
+                    img = add('img', {
+                        onload: () => card.className = 'loaded',
+                        src: URL.createObjectURL(new Blob([files.images[name]], {type: 'image/bmp'}))
+                    }),
+                    add('div', {}, [
+                        add('label', {}, [
+                            add('input', { type: "file", accept: "image/*",
+                                onchange: e => readBmpFile(name, e.target, img) })
+                        ]),
+                        add('span', { textContent: name }),
+                        add('a', { href: img.src, download: `${name}.bmp` })
+                    ])
+                ])
+            }))
+        }
+
+        const copyImagesToLogo = () =>
+            meta.names.forEach((name, i) => files.logo.set(files.images[name], meta.header + (meta.picSizeFooter * i)))
+
+        const createImg = () => {
+            copyImagesToLogo()
+            saveAs('img', new Blob([files.logo], {type: 'application/octet-stream'}))
+            alertDialog('logo.img has been created', `Copy downloaded file to /dev/block/bootdevice/by-name/logo`)
+        }
+
+        const createZip = () => {
+            $.loading.classList.add('open')
+            if (files.updateBinary === null)
+                fetchProgress("files/update-binary", buf => {
+                    files.updateBinary = buf
+                    createZip()
+                })
+            else {
+                $.loadingTitle.innerText = `Creating zip...`
+                setTimeout(() => {
+                    copyImagesToLogo()
+                    saveAs('zip', (Zip.from({
+                        ["META-INF/com/google/android/updater-script"]: files.updaterScript,
+                        ["META-INF/com/google/android/update-binary"]: files.updateBinary,
+                        ["logo.img"]: files.logo
+                    })))
+                    $.loading.classList.remove('open')
+                    alertDialog('ZIP has been created', `Flash downloaded file using custom recovery`)
+                }, 100)
+            }
+        }
+
+        const loadPrebuilt = () => {
+            $.loading.classList.add('open')
+            fetchProgress('files/logo.template', buf => {
+                loadLogoImg(RLE.decode(buf))
+                $.loading.classList.remove('open')
+            })
+        }
+
+        const readLogoFile = file => {
+            let reader = new FileReader()
+            reader.readAsArrayBuffer(file[0])
+            reader.onerror = () => alertDialog('Failed to read logo.img', `Choose another logo.img or try again`)
+            reader.onload = () => loadLogoImg(new Uint8Array(reader.result))
+        }
+        
+        const readBmpFile = (name, picker, img) => {
+            let reader = new FileReader()
+            reader.readAsArrayBuffer(picker.files[0])
+            picker.value = ''
+
+            reader.onerror = () => alertDialog('Failed to read image', `Choose another image or try again`)
+            reader.onload = () => {
+                imageLoader.src = URL.createObjectURL(new Blob([new Uint8Array(reader.result)], {type: 'image/bmp'}))
+                
+                $.resizeContinue.onclick = () => {
+                    files.images[name] = Bmp.from($.canvas)
+                    img.src = URL.createObjectURL(new Blob([files.images[name]], {type: 'image/bmp'}))
+                } 
+            }
+        }
+
+        const add = (type, props, tree) => {
+            const el = document.createElement(type)
+            Object.assign(el, props);
+            if (tree) el.append(...tree)
+            return el
+        }
+
+        const saveAs = (ext, blob) => {
+            URL.revokeObjectURL($.downloader.href)
+            $.downloader.download = 'logo.' + ext
+            $.downloader.href = URL.createObjectURL(blob)
+            $.downloader.click()
+        }
+
+        const fetchProgress = (url, callback) => {
+            $.loading.classList.remove('indeterminate')
+            $.loadingProgress.style.width = 0
+            $.loadingText.innerText = `Preparing...`
+            $.loadingTitle.innerText = `Downloading...`
+
+            const xhr = new XMLHttpRequest()
+            xhr.responseType = "arraybuffer";
+            xhr.open("GET", url, true)
+            xhr.onprogress = p => {
+                $.loadingProgress.style.width = `${p.loaded / p.total * 100}%`
+                $.loadingText.innerText = `${Math.round(p.loaded / 1024)} / ${Math.round(p.total / 1024)} KiB`
+            }
+            xhr.onload = () => {
+                $.loading.classList.add('indeterminate')
+                if (xhr.status !== 200) {
+                    $.loading.classList.remove('open')
+                    alertDialog('Failed to download file', `Server returned invalid status code: ${xhr.statusText}`)
+                } else
+                    callback(new Uint8Array(xhr.response))
+            }
+            xhr.onerror = () => {
+                $.loading.classList.add('indeterminate')
+                $.loading.classList.remove('open')
+                alertDialog('Failed to download file', `Can't download '${url}'. Check your internet connection.`)
+            }
+            xhr.send()
+        }
+
+        const alertDialog = (title, text) => {
+            $.alertTitle.innerText = title
+            $.alertText.innerHTML = text
+            $.alert.classList.add('open')
+        }
+
+        const info = () => 
+            alertDialog('Info', `<div class='dialog-text-wrap'>
+            <p>This tool is created by <a href="https://github.com/fordownloads">fordownloads</a> for editing logo.img file (partition).</p>
+            <p>The author <i>is not responsible</i> for a bricked devices. 
+            The author is also <i>not obliged to help</i> or answer questions. Use this site for your own risk.</p>
+            <p>Using template of logo.img is not recommended because it may be uncompatible with your device.</p>
+            <p>To get logo.img from your device:</p>
+                <ul>
+                    <li>Open file manager with root support (or use file manager from recovery)
+                    <li>Copy <code>/dev/block/bootdevice/by-name/logo</code> file to the <code>Internal Storage</code>
+                </ul></p>
+            <p>Two ways to flash logo.img manually:</p>
+                <ul>
+                    <li>Rename logo.img to logo and copy it to <code>/dev/block/bootdevice/by-name/</code> using root file manager (or file manager from recovery)
+                    <li>Open terminal and write:<br> <code>su<br>
+                        dd if=/location_of/logo.img of=/dev/block/bootdevice/by-name/logo</code>
+                </ul></p>
+            <p>Files that are downloaded by website:
+                <ul>
+                    <li>update-binary (2MiB) - used for creating zip archives
+                    <li>logo.template (2MiB) - compressed version of logo.img from POCO X3 Pro
+                </ul></p>
+            <p>You can modify and distribute modified version of this site, but I hightly reccomend to do pull request to
+                <a href="https://github.com/fordownloads/milogomaker">original git repository</a> instead of making a fork. Project is licensed under GPLv3.</p>
+            <p>Original idea belongs to <a href="https://forum.xda-developers.com/t/guide-how-to-change-boot-logo-splash-screen-of-redmi-note-5-pro-whyred.3787820/">Gokul NC & Pzqqt</a>. Zip implementation is refactored version of <a href="https://github.com/pwasystem/zip">pwasystem's zip</a>.</p>
+            <p>Links: <a href="https://github.com/fordownloads/milogomaker">GitHub Repo</a> <a href="https://t.me/fordownloads">Telegram</a></p>
+            </div>`)
+
+        const systemDestroyed = () => {
+            meta.names.forEach(name => files.images[name] = files.images[meta.names[3]])
+            const imgs = document.querySelectorAll('card img')
+            imgs.forEach(img => img.src = imgs[3].src)
+        }
+
+        if (localStorage.getItem('infoShown') !== 'true') {
+            localStorage.setItem('infoShown', 'true')
+            info()
+        }
+    </script>
+</body>
+
+</html>
